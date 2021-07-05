@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import libro
+from .models import Libro
 
 def form(request):   
     return render(request,'core/Formulario.html')
@@ -15,7 +15,7 @@ def añadir(request):
 
 
 def visualizacion(request):
-    libros = libro.objects.all()
+    libros = Libro.objects.all()
     datos ={ 'libros':libros}
     return render(request,'core/MostratDtatos.html',datos)
 
